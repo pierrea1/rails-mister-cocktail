@@ -4,9 +4,9 @@
 <h2> Add a dose for <%= @cocktail.name  %></h2>
 
 <%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :ingredient_id, collection: @ingredients.pluck(:name) %>
+      <%= f.input :ingredient, collection: @ingredients.pluck(:name) %>
       <%= f.input :description %>
-  <%= f.submit "add a cocktail", class: "btn btn-primary" %>
+  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
 <% end %>
 
 <%= link_to "Back to cocktail", cocktail_path(@cocktail)  %>

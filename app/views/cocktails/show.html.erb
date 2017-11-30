@@ -14,3 +14,9 @@
 
 <%= link_to "Back to list", cocktails_path %>
 <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+
+<%= simple_form_for [@cocktail, @dose] do |f| %>
+      <%= f.input :ingredient, collection: @ingredients.pluck(:name) %>
+      <%= f.input :description %>
+  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
+<% end %>
