@@ -2,6 +2,15 @@
 <p>Find me in app/views/cocktails/show.html.erb</p>
 
 <h2> <%= @cocktail.name  %></h2>
-
+<ul>
+  <% @doses.each do |dose| %>
+    <li>
+      <p><%= dose.ingredient.name %></p>
+      <p><%= dose.description %></p>
+      <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure you want to delete it?" }  %>
+    </li>
+  <% end %>
+</ul>
 
 <%= link_to "Back to list", cocktails_path %>
+<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
