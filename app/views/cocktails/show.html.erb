@@ -1,22 +1,32 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<%= render 'shared/navbar' %>
 
 <h2> <%= @cocktail.name  %></h2>
-<ul>
-  <% @doses.each do |dose| %>
-    <li>
-      <p><%= dose.ingredient.name %></p>
-      <p><%= dose.description %></p>
-      <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure you want to delete it?" }  %>
-    </li>
-  <% end %>
-</ul>
 
-<%= link_to "Back to list", cocktails_path %>
-<%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>
+<div class="container">
+  <div class="row">
+    <% @doses.each do |dose| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-description">
+          <h2><%= dose.description %> of <%= dose.ingredient.name %>
+          </h2>
+        </div>
+        <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure you want to delete it?" }, class: "btn btn-danger"  %>
+      </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <div class="col-sm-offset-4 col-sm-4">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :ingredient, collection: @ingredients.pluck(:name) %>
+        <%= f.input :description %>
+        <%= f.submit "add an ingredient", class: "btn btn-medium btn-center" %>
+      <% end %>
+    </div>
+  </div>
+</div>
 
-<%= simple_form_for [@cocktail, @dose] do |f| %>
-      <%= f.input :ingredient, collection: @ingredients.pluck(:name) %>
-      <%= f.input :description %>
-  <%= f.submit "add an ingredient", class: "btn btn-primary" %>
-<% end %>
+<%= render 'shared/footer' %>
+
+<%#= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail) %>

@@ -1,3 +1,57 @@
 // Place all the styles related to the cocktails controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h1 {
+  color: black;
+  text-align: center
+}
+
+h2 {
+  color: black;
+  text-align: center;
+  font-size: 30px;
+}
+
+// ####### Navbar ########
+
+
+// ####### Buttons #######
+
+.btn-medium {
+  color: #999999;
+  border: 1px solid #999999;
+  padding: 10px 15px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin: 20px;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  text-decoration: none;
+  color: #999999;
+}
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #95818D;
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #60545B;
+  text-decoration: none;
+  color: white;
+}
+
+.btn-center {
+  display: block;
+  width: 250px;
+  margin: auto;
+  margin-bottom: 10px;
+  text-align: center;
+}
