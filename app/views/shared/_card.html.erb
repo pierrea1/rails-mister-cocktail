@@ -1,5 +1,14 @@
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo.path, height: 300, width: 400, crop: :fill if cocktail.photo? %>');">
   <div class="card-description">
     <h2><%= cocktail.name %></h2>
   </div>
 </div>
+
+
+
+<!-- <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://res.cloudinary.com/dpejnwyy6/image/upload/c_scale,w_3024/v1512141818/IMG_7032_do2eca.jpg');">
+  <div class="card-description">
+    <h2><%= cocktail.name %></h2>
+  </div>
+</div>
+ -->

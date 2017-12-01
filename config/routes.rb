@@ -26,4 +26,6 @@ resources :cocktails do
   resources :doses, only: [ :new, :create, :destroy ]
 end
 
+mount Attachinary::Engine => "/attachinary"
+
 end

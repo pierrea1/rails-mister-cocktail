@@ -7,10 +7,11 @@
     <div class="col-sm-offset-4 col-sm-4">
       <%= simple_form_for @cocktail do |f| %>
         <%= f.input :name %>
+        <%= f.input :photo, as: :attachinary %>
         <%= f.submit "add a cocktail", class: "btn btn-medium btn-center" %>
       <% end %>
     </div>
   </div>
 </div>
 
-<%= render 'shared/footer' %>
+
